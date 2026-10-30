@@ -1,1 +1,505 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rakesh Ben | Digital Marketing &amp; Content Creator</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#07080a;--surface:#101214;--raised:#171a1d;--border:#24282d;--fg:#f2f2f2;--muted:#9a9fa6;--primary:#22d472;--primary-dark:#18a355;--mono:'JetBrains Mono',monospace;--sans:'Sora',system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1140px;margin:0 auto;padding:0 24px;position:relative;z-index:2}
+section{padding:96px 0;position:relative;overflow:hidden}
+.label{font-family:var(--mono);font-size:11px;color:var(--primary);letter-spacing:.08em;text-transform:uppercase}
+h1,h2,h3{font-weight:800;letter-spacing:-.03em;line-height:1.05}
+h2{font-size:clamp(34px,4.5vw,54px);margin:12px 0 36px}
+.muted{color:var(--muted)}
+.bgimg{position:absolute;inset:0;background-size:cover;background-position:center;filter:blur(30px) saturate(1.2);opacity:.22;z-index:0;transform:scale(1.1)}
+.shade{position:absolute;inset:0;background:linear-gradient(180deg,var(--bg) 0%,rgba(7,8,10,.55) 50%,var(--bg) 100%);z-index:1}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--sans);font-weight:600;font-size:14px;padding:12px 22px;border-radius:999px;border:1px solid var(--border);transition:.2s}
+.btn-primary{background:var(--primary);color:#04140b;border-color:var(--primary)}
+.btn-primary:hover{background:var(--primary-dark);transform:translateY(-2px)}
+.btn-ghost:hover{border-color:var(--primary);color:var(--primary)}
+.btn-wa{border-color:#25d366;color:#25d366}
+.btn-wa:hover{background:#25d366;color:#04140b}
+.card{background:rgba(16,18,20,.85);backdrop-filter:blur(6px);border:1px solid var(--border);border-radius:16px;padding:26px;transition:transform .3s ease,border-color .2s,box-shadow .2s}
+.card:hover{transform:translateY(-6px);border-color:var(--primary);box-shadow:0 18px 40px rgba(34,212,114,.12)}
+.chip{font-family:var(--mono);font-size:11px;color:var(--primary);background:var(--raised);border:1px solid var(--border);border-radius:999px;padding:4px 10px;display:inline-block;margin:4px 6px 4px 0}
+svg.i{width:20px;height:20px;flex-shrink:0}
 
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:rgba(7,8,10,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--border)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{font-weight:700;font-size:16px;display:flex;align-items:center;gap:10px}
+.brand .dot{width:34px;height:34px;object-fit:cover;border-radius:50%;background:var(--primary);color:#04140b;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px}
+.nav-links{display:flex;gap:26px;font-size:13px;color:var(--muted)}
+.nav-links a:hover{color:var(--fg)}
+.menu-btn{display:none;background:none;border:1px solid var(--border);color:var(--fg);font-size:18px;padding:4px 10px;border-radius:8px;cursor:pointer}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;background:var(--bg)}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,8,10,.88) 0%,rgba(7,8,10,.55) 55%,rgba(7,8,10,.35) 100%);z-index:1}
+#bg3d{position:absolute;inset:0;width:100%;height:100%;z-index:1;pointer-events:none}
+.hero-bg{position:absolute;inset:0;background-image:url(images/image_01.jpg);background-size:cover;background-position:center;filter:blur(60px) saturate(1.3);opacity:.28;transform:scale(1.2);z-index:0}
+.hero .wrap{width:100%}
+.hero-copy{max-width:560px;animation:fadeUp 1s both}
+.badge{font-family:var(--mono);font-size:11px;color:var(--primary);border:1px solid var(--border);background:rgba(16,18,20,.8);padding:7px 14px;border-radius:999px;display:inline-block;margin-bottom:24px}
+.hero h1{font-size:clamp(46px,6.2vw,86px);letter-spacing:-.045em;line-height:.95}
+.hero h1 em{font-style:normal;color:var(--primary)}
+.hero p.sub{font-size:16px;color:var(--muted);max-width:460px;margin:22px 0 34px}
+.ctas{display:flex;gap:12px;flex-wrap:wrap}
+@keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:none}}
+
+/* MARQUEE */
+.marquee{overflow:hidden;background:var(--primary);color:#04140b;font-family:var(--mono);font-size:13px;font-weight:500;padding:13px 0;white-space:nowrap;position:relative;z-index:3}
+.mq{display:inline-flex;gap:40px;animation:mq 24s linear infinite}
+.mq span::after{content:"\2605";margin-left:40px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:center}
+.avatar{width:100%;aspect-ratio:1;object-fit:cover;border-radius:24px;border:1px solid var(--border);box-shadow:0 24px 60px rgba(0,0,0,.5);transition:transform .4s ease}
+.avatar:hover{transform:rotate(-2deg) scale(1.02)}
+.about-grid p{color:var(--muted);margin-bottom:16px;font-size:15px}
+.info{list-style:none;margin-top:22px}
+.info li{padding:13px 0;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;gap:16px;font-size:14px}
+.info li span:first-child{font-family:var(--mono);font-size:11px;color:var(--muted);text-transform:uppercase}
+.info a{color:var(--primary)}
+
+/* SERVICES */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.svc-ico{width:46px;height:46px;border-radius:12px;background:var(--raised);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--primary);margin-bottom:16px}
+.svc-ico svg{width:22px;height:22px;fill:currentColor}
+.card h3{font-size:18px;margin-bottom:8px}
+.card p{color:var(--muted);font-size:14px}
+
+/* CLIENTS */
+.clients{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.client-head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.logo{width:58px;height:58px;border-radius:14px;background:linear-gradient(135deg,#22d472,#0f7a43);color:#04140b;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:19px;flex-shrink:0;box-shadow:0 8px 24px rgba(34,212,114,.25);animation:spin3d 6s ease-in-out infinite}
+@keyframes spin3d{0%,100%{transform:rotateY(0)}50%{transform:rotateY(180deg)}}
+.client-head h3{font-size:20px}
+.client-head small{font-family:var(--mono);font-size:11px;color:var(--muted)}
+.label-c{font-family:var(--mono);font-size:11px;color:var(--primary)}
+.desc{color:var(--muted);font-size:14px;margin-bottom:16px}
+.proj{margin:14px 0 18px;padding:16px;border:1px solid var(--border);border-radius:12px;background:var(--raised)}
+.proj h3{font-size:17px;margin:6px 0}
+.proj p{color:var(--muted);font-size:14px;margin:0}
+.links{display:flex;flex-wrap:wrap;gap:10px}
+.link{display:flex;align-items:center;gap:10px;padding:11px 16px;border:1px solid var(--border);border-radius:999px;background:var(--raised);font-weight:600;font-size:13px;transition:.2s}
+.link:hover{transform:translateY(-3px);border-color:var(--primary);color:var(--primary);box-shadow:0 0 22px rgba(34,212,114,.15)}
+.link svg{width:18px;height:18px;fill:currentColor}
+.l-fb{color:#1877f2}.l-ig{color:#e1306c}.l-yt{color:#ff0033}
+
+/* VIDEOS */
+.vgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
+.vbox{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .3s ease,border-color .2s}
+.vbox:hover{transform:translateY(-6px);border-color:var(--primary)}
+.vbox video{width:100%;display:block;background:#000;aspect-ratio:16/9}
+
+/* SKILLS */
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.skill{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;font-size:14px;transition:border-color .2s}
+.skill:hover{border-color:var(--primary)}
+.skill b{display:block;font-family:var(--mono);font-size:11px;color:var(--primary);font-weight:500;margin-bottom:6px;text-transform:uppercase}
+.edu{margin-top:30px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.edu h3{font-size:16px;margin:8px 0 4px}
+
+/* CONTACT */
+.contact{text-align:center}
+.contact h2{font-size:clamp(42px,6vw,72px);font-weight:900;margin:14px 0 14px}
+.phone{font-family:var(--mono);font-size:22px;color:var(--primary);margin:14px 0 30px;display:block}
+.contact .ctas{justify-content:center}
+footer{background:#050608;padding:40px 0 24px;border-top:1px solid var(--border);position:relative;z-index:2}
+.foot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.foot a{font-family:var(--mono);font-size:12px;color:var(--muted);margin-left:18px}
+.foot a:hover{color:var(--primary)}
+.copy{font-family:var(--mono);font-size:11px;color:var(--muted);margin-top:24px}
+
+.rv{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:860px){
+  .nav-links{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--bg);padding:20px 24px;border-bottom:1px solid var(--border)}
+  .nav-links.open{display:flex}
+  .menu-btn{display:block}
+  .about-grid,.clients{grid-template-columns:1fr}
+  .avatar{max-width:300px;margin:0 auto}
+  .grid3{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr 1fr}
+  .edu{grid-template-columns:1fr}
+  section{padding:72px 0}
+}
+@media (max-width:480px){.skills{grid-template-columns:1fr}}
+.svc{position:relative;background-size:cover;background-position:center;min-height:270px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;border-color:#2a2f35}
+.svc:hover{background-size:108%}
+.svc h3{color:#fff}
+.svc p{color:#c9cdd2}
+.svc .svc-ico{background:rgba(7,8,10,.6)}
+
+#bgfx{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+footer{background:rgba(5,6,8,.82)!important}
+
+.btn-sm{padding:9px 16px;font-size:12px}
+.btn-call{border-color:var(--primary);color:var(--primary)}
+.btn-call:hover{background:var(--primary);color:#04140b;transform:translateY(-2px)}
+.btn svg{width:16px;height:16px;fill:currentColor;flex:none}
+.svc .btn{margin-top:16px}
+.card-cta{margin-top:18px;display:flex;gap:10px;flex-wrap:wrap}
+.cta-band{margin-top:40px;padding:26px 28px;border:1px solid var(--border);border-radius:16px;background:rgba(16,18,20,.85);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.cta-band b{font-size:18px;font-weight:600}
+.cta-band span.m{display:block;color:var(--muted);font-size:13px;margin-top:2px}
+.about-ctas{margin-top:26px;display:flex;gap:10px;flex-wrap:wrap}
+.foot-btns{display:flex;gap:10px;flex-wrap:wrap;margin:22px 0 4px}
+.fab-stack{position:fixed;right:18px;bottom:calc(18px + env(safe-area-inset-bottom,0px));z-index:60;display:flex;flex-direction:column;gap:12px;align-items:center}
+.fab{width:52px;height:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:0;cursor:pointer;box-shadow:0 10px 26px rgba(0,0,0,.45);transition:transform .2s,opacity .3s,background .2s;color:#fff}
+.fab svg{width:26px;height:26px;fill:currentColor}
+.fab:hover{transform:translateY(-3px) scale(1.06)}
+.fab-wa{background:#25d366;color:#04140b;position:relative}
+.fab-wa::after{content:"";position:absolute;inset:0;border-radius:50%;border:2px solid #25d366;animation:fabp 2s infinite}
+@keyframes fabp{0%{transform:scale(1);opacity:.8}100%{transform:scale(1.6);opacity:0}}
+.fab-call{background:var(--primary);color:#04140b}
+.fab-top{background:var(--raised);border:1px solid var(--border);color:var(--fg);width:44px;height:44px;opacity:0;pointer-events:none;transform:translateY(10px)}
+.fab-top.show{opacity:1;pointer-events:auto;transform:none}
+.fab-top svg{width:20px;height:20px}
+@media(max-width:700px){.fab{width:48px;height:48px}.cta-band{padding:20px}}
+@media(prefers-reduced-motion:reduce){.fab-wa::after{animation:none}}
+</style>
+</head>
+<body>
+<canvas id="bgfx" aria-hidden="true"></canvas>
+
+<nav>
+  <div class="wrap nav-in">
+    <a href="#top" class="brand"><img class="dot" src="images/image_02.jpg" alt="Rakesh Ben">Rakesh Ben</a>
+    <div class="nav-links" id="links">
+      <a href="#about">About</a>
+      <a href="#services">Services</a>
+      <a href="#clients">Clients</a>
+      <a href="#videos">Videos</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <div style="display:flex;gap:12px;align-items:center">
+      <a href="#contact" class="btn btn-primary" style="padding:8px 16px;font-size:12px">Hire me →</a>
+      <button class="menu-btn" id="menu" aria-label="Menu">☰</button>
+    </div>
+  </div>
+</nav>
+
+<header id="top" class="hero">
+  <video class="hero-video" autoplay muted loop playsinline src="videos/video_01.mp4"></video>
+  <div class="hero-shade"></div>
+  <div class="hero-bg"></div>
+  <canvas id="bg3d"></canvas>
+  <div class="wrap">
+    <div class="hero-copy">
+      <span class="badge">AVAILABLE FOR WORK · RAIPUR, CG</span>
+      <h1>Stories that sell,<br>made for <em>screens.</em></h1>
+      <p class="sub">Digital marketer and content creator. I handle social media, make reels and AI-assisted videos, and design posters that get people to act.</p>
+      <div class="ctas">
+        <a href="#clients" class="btn btn-primary">Brands I work with →</a>
+        <a href="https://wa.me/916265010709" target="_blank" rel="noopener" class="btn btn-wa">WhatsApp chat</a>
+        <a href="tel:+916265010709" class="btn btn-call">Call now</a>
+        <a href="#contact" class="btn btn-ghost">Contact ↓</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="marquee"><div class="mq"><span>Reels</span><span>Posters</span><span>AI Video</span><span>Social Media</span><span>Graphic Design</span><span>Ads</span><span>Reels</span><span>Posters</span><span>AI Video</span><span>Social Media</span><span>Graphic Design</span><span>Ads</span></div></div>
+
+<section id="about">
+  <div class="bgimg" style="background-image:url(images/image_03.jpg)"></div><div class="shade"></div>
+  <div class="wrap about-grid">
+    <div class="rv"><img class="avatar" src="images/image_04.jpg" alt="Rakesh Ben"></div>
+    <div class="rv">
+      <span class="label">About me</span>
+      <h2>Hi, I'm Rakesh.</h2>
+      <p>I graduated in Journalism &amp; Mass Communication from MATS University, Raipur, and turned storytelling into a digital marketing career. I plan the content, create it with AI tools, edit it, and then manage it on social media.</p>
+      <p>I am polite, reliable and loyal to my work, with good communication skills. I work in Hindi and English.</p>
+      <ul class="info">
+        <li><span>Phone</span><span><a href="tel:+916265010709">6265010709</a></span></li>
+        <li><span>Email</span><span><a href="mailto:rakeshben97@gmail.com">rakeshben97@gmail.com</a></span></li>
+        <li><span>Instagram</span><span><a href="https://www.instagram.com/rakesh.ben97" target="_blank" rel="noopener">@rakesh.ben97</a></span></li>
+        <li><span>Location</span><span>Raipur, Chhattisgarh</span></li>
+      </ul>
+      <div class="about-ctas"><a href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20saw%20your%20portfolio." target="_blank" rel="noopener" class="btn btn-wa"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>WhatsApp</a><a href="tel:+916265010709" class="btn btn-call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>Call now</a><button type="button" class="btn btn-ghost" data-vcard><svg viewBox="0 0 24 24"><path d="M15 12a4 4 0 10-6 0 6 6 0 00-5 6v2h16v-2a6 6 0 00-5-6zM19 8v-2h2V4h-2V2h-2v2h-2v2h2v2z"/></svg>Save contact</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="label rv">What I do</span>
+    <h2 class="rv">Services.</h2>
+    <div class="grid3">
+      <div class="card rv svc" style="background-image:linear-gradient(180deg,rgba(7,8,10,.35),rgba(7,8,10,.92)),url(images/image_05.jpg)"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M18 16a3 3 0 00-2.4 1.2l-6.6-3.8a3 3 0 000-1.8l6.6-3.8A3 3 0 1015 5a3 3 0 00.1.7L8.5 9.5a3 3 0 100 5l6.6 3.8A3 3 0 1018 16z"/></svg></div><h3>Social Media Management</h3><p>Handling Facebook and Instagram pages with captions, hashtags, keywords and a regular posting plan.</p><a href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20am%20interested%20in%3A%20Social%20Media%20Management" target="_blank" rel="noopener" class="btn btn-wa btn-sm"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>Get this service</a></div>
+      <div class="card rv svc" style="background-image:linear-gradient(180deg,rgba(7,8,10,.35),rgba(7,8,10,.92)),url(images/image_06.jpg)"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg></div><h3>Video Editing &amp; Reels</h3><p>Promotional videos, reels and short-form content edited for mobile, with titles and motion graphics.</p><a href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20am%20interested%20in%3A%20Video%20Editing%20%26%20Reels" target="_blank" rel="noopener" class="btn btn-wa btn-sm"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>Get this service</a></div>
+      <div class="card rv svc" style="background-image:linear-gradient(180deg,rgba(7,8,10,.35),rgba(7,8,10,.92)),url(images/image_07.jpg)"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M4 4h16v12H4zm2 2v8h12V6zM2 20h20v2H2z"/></svg></div><h3>Poster &amp; Graphic Design</h3><p>Social media posters, festival creatives and business advertising designs.</p><a href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20am%20interested%20in%3A%20Poster%20%26%20Graphic%20Design" target="_blank" rel="noopener" class="btn btn-wa btn-sm"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>Get this service</a></div>
+      <div class="card rv svc" style="background-image:linear-gradient(180deg,rgba(7,8,10,.35),rgba(7,8,10,.92)),url(images/image_08.jpg)"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M12 2l2.4 7.6L22 12l-7.6 2.4L12 22l-2.4-7.6L2 12l7.6-2.4z"/></svg></div><h3>AI-Assisted Content</h3><p>Creative concepts, 3D-style animation and advertising content made with AI tools.</p><a href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20am%20interested%20in%3A%20AI-Assisted%20Content" target="_blank" rel="noopener" class="btn btn-wa btn-sm"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>Get this service</a></div>
+      <div class="card rv svc" style="background-image:linear-gradient(180deg,rgba(7,8,10,.35),rgba(7,8,10,.92)),url(images/image_09.jpg)"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18v-2H5V3zm4 10h3v6H7zm5-4h3v10h-3zm5-3h3v13h-3z"/></svg></div><h3>Digital Marketing &amp; SEO</h3><p>Basic SEO, keyword research and hashtag optimisation so businesses are found online.</p><a href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20am%20interested%20in%3A%20Digital%20Marketing%20%26%20SEO" target="_blank" rel="noopener" class="btn btn-wa btn-sm"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>Get this service</a></div>
+      <div class="card rv svc" style="background-image:linear-gradient(180deg,rgba(7,8,10,.35),rgba(7,8,10,.92)),url(images/image_10.jpg)"><div class="svc-ico"><svg viewBox="0 0 24 24"><path d="M17 10.5V7a1 1 0 00-1-1H4a1 1 0 00-1 1v10a1 1 0 001 1h12a1 1 0 001-1v-3.5l4 4v-11l-4 4z"/></svg></div><h3>Content Creation</h3><p>Engaging visual and promotional content, from idea and script to the final post.</p><a href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20am%20interested%20in%3A%20Content%20Creation" target="_blank" rel="noopener" class="btn btn-wa btn-sm"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>Get this service</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="clients">
+  <div class="bgimg" style="background-image:url(images/image_11.jpg)"></div><div class="shade"></div>
+  <div class="wrap">
+    <span class="label rv">Brands I work with</span>
+    <h2 class="rv">Clients &amp; social links.</h2>
+    <div class="clients">
+      <div class="card rv">
+        <div class="client-head"><div class="logo">MEB</div><div><span class="label-c">Client 1</span><h3>MAAHI ECO BUILD</h3><small>Fly Ash Bricks Machinery · Raipur</small></div></div>
+        <p class="desc">Social media content and promo videos for an affordable fly ash brick machine (705 bricks/hour).</p>
+        <div class="proj"><span class="label-c">Project</span><h3>Fly Ash Brick Machine Promo</h3><p>A 35-second Hindi promo covering capacity, low maintenance and business opportunity. Edited in CapCut for Reels and Shorts.</p></div>
+        <div class="links">
+          <a class="link l-fb" href="https://www.facebook.com/profile.php?id=61561111612563" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg>Facebook</a>
+          <a class="link l-ig" href="https://www.instagram.com/maahiecobuild" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.69 21.31.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.41-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>Instagram</a>
+          <a class="link l-yt" href="https://www.youtube.com/@Maahiecobuild" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M23.5 6.19a3.02 3.02 0 00-2.12-2.14C19.5 3.55 12 3.55 12 3.55s-7.5 0-9.38.5A3.02 3.02 0 00.5 6.19 31.6 31.6 0 000 12a31.6 31.6 0 00.5 5.81 3.02 3.02 0 002.12 2.14c1.88.5 9.38.5 9.38.5s7.5 0 9.38-.5a3.02 3.02 0 002.12-2.14A31.6 31.6 0 0024 12a31.6 31.6 0 00-.5-5.81zM9.55 15.57V8.43L15.82 12l-6.27 3.57z"/></svg>YouTube</a>
+        </div>
+        <div class="card-cta"><a href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20saw%20your%20work%20for%20MAAHI%20ECO%20BUILD.%20I%20want%20similar%20content%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>Work with me</a><a href="tel:+916265010709" class="btn btn-call btn-sm"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>Call</a></div>
+      </div>
+      <div class="card rv">
+        <div class="client-head"><div class="logo">SF</div><div><span class="label-c">Client 2</span><h3>Senger Furniture</h3><small>Furniture &amp; Interior Design · Mowa, Raipur</small></div></div>
+        <p class="desc">Festive showroom advertising, 3D animation and photoreal 3D content.</p>
+        <div class="proj"><span class="label-c">Project</span><h3>Navratri &amp; Dussehra Showroom Ad</h3><p>A 10-second festive ad for the Mowa, Raipur showroom, using 3D animation and photoreal 3D conversion.</p></div>
+        <div class="links">
+          <a class="link l-fb" href="https://www.facebook.com/profile.php?id=61591229739034" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M24 12.07C24 5.4 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.09 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.09 24 18.1 24 12.07z"/></svg>Facebook</a>
+          <a class="link l-ig" href="https://www.instagram.com/senger_furniture_" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 3.25.15 4.77 1.69 4.92 4.92.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.15 3.23-1.66 4.77-4.92 4.92-1.27.06-1.64.07-4.85.07s-3.58-.01-4.85-.07c-3.26-.15-4.77-1.7-4.92-4.92C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85C2.38 3.92 3.9 2.38 7.15 2.23 8.42 2.17 8.8 2.16 12 2.16zM12 0C8.74 0 8.33.01 7.05.07 2.7.27.27 2.69.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.2 4.36 2.62 6.78 6.98 6.98C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c4.35-.2 6.78-2.62 6.98-6.98.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95C23.73 2.69 21.31.27 16.95.07 15.67.01 15.26 0 12 0zm0 5.84a6.16 6.16 0 100 12.32 6.16 6.16 0 000-12.32zM12 16a4 4 0 110-8 4 4 0 010 8zm6.41-11.85a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>Instagram</a>
+        </div>
+        <div class="card-cta"><a href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20saw%20your%20work%20for%20Senger%20Furniture.%20I%20want%20similar%20content%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary btn-sm"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>Work with me</a><a href="tel:+916265010709" class="btn btn-call btn-sm"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>Call</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="videos">
+  <div class="wrap">
+    <span class="label rv">Client 3 · Ads</span>
+    <h2 class="rv">Cold drink &amp; mineral water ads.</h2>
+    <p class="muted rv" style="margin:-20px 0 30px">Edited ads made with AI tools and editing.</p>
+    <div class="vgrid">
+      <div class="vbox rv"><video controls playsinline preload="metadata" poster="images/image_01.jpg" src="videos/video_02.mp4"></video></div>
+      <div class="vbox rv"><video controls playsinline preload="metadata" poster="images/image_11.jpg" src="videos/video_03.mp4"></video></div>
+      <div class="vbox rv"><video controls playsinline preload="metadata" poster="images/image_03.jpg" src="videos/video_04.mp4"></video></div>
+      <div class="vbox rv"><video controls playsinline preload="metadata" poster="images/image_12.jpg" src="videos/video_05.mp4"></video></div>
+      <div class="vbox rv"><video controls playsinline preload="metadata" poster="images/image_13.jpg" src="videos/video_06.mp4"></video></div>
+
+    </div>
+    <div class="cta-band rv"><div><b>Want an ad or reel like these?</b><span class="m">Tell me about your business and I'll reply on WhatsApp.</span></div><div class="card-cta" style="margin:0"><a href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20want%20a%20promo%20video%20/%20reel%20for%20my%20business." target="_blank" rel="noopener" class="btn btn-primary"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>Get a video made</a><a href="tel:+916265010709" class="btn btn-call"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>Call now</a></div></div>
+  </div>
+</section>
+
+<section class="alt" style="background:var(--surface)">
+  <div class="wrap">
+    <span class="label rv">Toolkit</span>
+    <h2 class="rv">Skills.</h2>
+    <div class="skills">
+      <div class="skill rv"><b>Social Media</b>Facebook &amp; Instagram management</div>
+      <div class="skill rv"><b>Design</b>Posters &amp; graphic designing</div>
+      <div class="skill rv"><b>Video</b>Editing, reels &amp; short-form</div>
+      <div class="skill rv"><b>Marketing</b>Digital marketing, basic SEO</div>
+      <div class="skill rv"><b>AI Content</b>AI-assisted creation &amp; concepts</div>
+      <div class="skill rv"><b>Computer</b>Basic computer &amp; internet</div>
+      <div class="skill rv"><b>Accounts</b>Tally with GST</div>
+      <div class="skill rv"><b>Languages</b>Hindi &amp; English</div>
+    </div>
+    <div class="edu">
+      <div class="card rv"><span class="label">2022</span><h3>B.A. Journalism &amp; Mass Comm.</h3><p>MATS University, Raipur</p></div>
+      <div class="card rv"><span class="label">2016</span><h3>12th (Maths)</h3><p>CG Board</p></div>
+      <div class="card rv"><span class="label">2014</span><h3>10th</h3><p>CG Board</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="bgimg" style="background-image:url(images/image_12.jpg)"></div><div class="shade"></div>
+  <div class="wrap rv">
+    <span class="label">Let's work together</span>
+    <h2>Let's create something.</h2>
+    <p class="muted">Social media handling, reels, posters or a full promo video.</p>
+    <a href="tel:+916265010709" class="phone">+91 6265010709</a>
+    <div class="ctas">
+      <a href="tel:+916265010709" class="btn btn-primary">Call now →</a>
+      <a href="https://wa.me/916265010709" target="_blank" rel="noopener" class="btn btn-wa">WhatsApp chat →</a>
+      <a href="mailto:rakeshben97@gmail.com" class="btn btn-ghost">Email me</a>
+      <a href="https://www.instagram.com/rakesh.ben97" target="_blank" rel="noopener" class="btn btn-ghost">Instagram ↗</a>
+      <button type="button" class="btn btn-ghost" data-vcard><svg viewBox="0 0 24 24"><path d="M15 12a4 4 0 10-6 0 6 6 0 00-5 6v2h16v-2a6 6 0 00-5-6zM19 8v-2h2V4h-2V2h-2v2h-2v2h2v2z"/></svg>Save contact</button>
+      <button type="button" class="btn btn-ghost" data-share><svg viewBox="0 0 24 24"><path d="M18 16a3 3 0 00-2.4 1.2l-6.6-3.8a3 3 0 000-1.8l6.6-3.8A3 3 0 1015 5a3 3 0 00.1.7L8.5 9.5a3 3 0 100 5l6.6 3.8A3 3 0 1018 16z"/></svg><span>Share page</span></button>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div><b>Rakesh Ben</b><br><span class="label" style="color:var(--muted);font-size:10px">Digital Marketing &amp; Content Creator</span></div>
+      <div><a href="#about">About</a><a href="#clients">Clients</a><a href="#videos">Videos</a><a href="#contact">Contact</a></div>
+    </div>
+    <div class="foot-btns"><a href="https://wa.me/916265010709?text=Hi%20Rakesh%21" target="_blank" rel="noopener" class="btn btn-wa btn-sm"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg>WhatsApp</a><a href="tel:+916265010709" class="btn btn-call btn-sm"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg>Call</a><a href="mailto:rakeshben97@gmail.com" class="btn btn-ghost btn-sm">Email</a><a href="https://www.instagram.com/rakesh.ben97" target="_blank" rel="noopener" class="btn btn-ghost btn-sm">Instagram ↗</a><a href="#top" class="btn btn-ghost btn-sm">Back to top <svg style="order:2" viewBox="0 0 24 24"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8l-4.6 4.6L5 12z"/></svg></a></div>
+    <p class="copy">© 2026 Rakesh Ben · Raipur, Chhattisgarh</p>
+  </div>
+</footer>
+
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.169.0/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+const canvas=document.getElementById('bg3d');
+try{
+  const renderer=new THREE.WebGLRenderer({canvas,alpha:true,antialias:true});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio,2));
+  const scene=new THREE.Scene();
+  const camera=new THREE.PerspectiveCamera(40,1,0.1,100);
+  camera.position.z=10;
+  const loader=new THREE.TextureLoader();
+  const group=new THREE.Group(); scene.add(group);
+  const R=4.4;
+  const hv=document.createElement('video');
+  hv.src="videos/video_01.mp4"; hv.loop=true; hv.muted=true; hv.playsInline=true; hv.setAttribute('playsinline',''); hv.preload='auto';
+  hv.style.cssText='position:fixed;width:1px;height:1px;opacity:0;pointer-events:none;left:0;top:0';
+  document.body.appendChild(hv);
+  hv.play().catch(()=>{});
+  const vtex=new THREE.VideoTexture(hv); vtex.colorSpace=THREE.SRGBColorSpace;
+  const top=new THREE.Mesh(new THREE.PlaneGeometry(8,4.5),new THREE.MeshBasicMaterial({map:vtex,side:THREE.DoubleSide}));
+  const topFrame=new THREE.Mesh(new THREE.PlaneGeometry(8.2,4.7),new THREE.MeshBasicMaterial({color:0x22d472,transparent:true,opacity:.35,side:THREE.DoubleSide}));
+  const ring=new THREE.Mesh(new THREE.RingGeometry(R+1.2,R+1.22,160),new THREE.MeshBasicMaterial({color:0x22d472,side:THREE.DoubleSide,transparent:true,opacity:.22}));
+  ring.rotation.x=Math.PI/2; ring.position.y=-2.2; scene.add(ring);
+  const n=350,pos=new Float32Array(n*3);
+  for(let i=0;i<n*3;i++) pos[i]=(Math.random()-.5)*22;
+  const pg=new THREE.BufferGeometry(); pg.setAttribute('position',new THREE.BufferAttribute(pos,3));
+  const pts=new THREE.Points(pg,new THREE.PointsMaterial({color:0x22d472,size:0.035,transparent:true,opacity:.55}));
+  scene.add(pts);
+  let mx=0,my=0;
+  window.addEventListener('pointermove',e=>{mx=e.clientX/window.innerWidth-.5; my=e.clientY/window.innerHeight-.5;});
+  function size(){
+    const w=canvas.clientWidth,h=canvas.clientHeight; renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();
+    const wide=camera.aspect>1;
+    const vw=2*10*Math.tan(20*Math.PI/180)*camera.aspect;
+    const sc=wide?1:Math.min(1,vw*0.85/8);
+    top.position.set(wide?2.4:0, wide?0:2.2, 0); top.scale.setScalar(sc);
+    topFrame.position.set(top.position.x, top.position.y, -0.02); topFrame.scale.setScalar(sc);
+  }
+  size(); window.addEventListener('resize',size);
+  (function loop(){
+    group.rotation.y+=0.0025;
+    pts.rotation.y+=0.0006;
+    camera.position.x+=(mx*1.2-camera.position.x)*0.04;
+    camera.position.y+=(-my*0.8-camera.position.y)*0.04;
+    camera.lookAt(0,0,0);
+    renderer.render(scene,camera);
+    requestAnimationFrame(loop);
+  })();
+}catch(e){ canvas.style.display='none'; }
+</script>
+<script>
+const menu=document.getElementById('menu'),links=document.getElementById('links');
+menu.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll('.rv').forEach((el,i)=>{el.style.transitionDelay=(i%3)*0.08+'s';io.observe(el)});
+</script>
+<script>
+(function(){
+const cv=document.getElementById('bgfx'); if(!cv) return;
+const ctx=cv.getContext('2d'); if(!ctx) return;
+const reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+let W,H,DPR,mx=0,my=0,smx=0,smy=0,sy=0;
+function resize(){DPR=Math.min(window.devicePixelRatio||1,2);W=innerWidth;H=innerHeight;cv.width=W*DPR;cv.height=H*DPR;ctx.setTransform(DPR,0,0,DPR,0,0);}
+resize(); addEventListener('resize',resize);
+addEventListener('pointermove',e=>{mx=e.clientX/W-.5;my=e.clientY/H-.5;},{passive:true});
+addEventListener('scroll',()=>{sy=scrollY;},{passive:true});
+
+// ---- polyhedra (vertices + edges) ----
+function edgesOf(v){let min=1e9;const d=(a,b)=>Math.hypot(a[0]-b[0],a[1]-b[1],a[2]-b[2]);
+  for(let i=0;i<v.length;i++)for(let j=i+1;j<v.length;j++)min=Math.min(min,d(v[i],v[j]));
+  const e=[];for(let i=0;i<v.length;i++)for(let j=i+1;j<v.length;j++)if(d(v[i],v[j])<min*1.05)e.push([i,j]);return e;}
+const cube=[],oct=[[1.3,0,0],[-1.3,0,0],[0,1.3,0],[0,-1.3,0],[0,0,1.3],[0,0,-1.3]],tet=[[1,1,1],[1,-1,-1],[-1,1,-1],[-1,-1,1]],ico=[];
+for(const x of[-1,1])for(const y of[-1,1])for(const z of[-1,1])cube.push([x*.8,y*.8,z*.8]);
+const g=(1+Math.sqrt(5))/2;
+for(const a of[-1,1])for(const b of[-g,g]){ico.push([0,a,b].map(n=>n*.7));ico.push([a,b,0].map(n=>n*.7));ico.push([b,0,a].map(n=>n*.7));}
+const shapes=[cube,oct,tet,ico].map(v=>({v,e:edgesOf(v)}));
+
+const N=W<700?11:18;
+const objs=[];
+for(let i=0;i<N;i++){objs.push({s:shapes[i%4],nx:Math.random(),y0:Math.random()*H*1.5,z:3+Math.random()*9,
+  size:34+Math.random()*46,ax:Math.random()*6,ay:Math.random()*6,az:Math.random()*6,
+  rx:(Math.random()-.5)*.012,ry:(Math.random()-.5)*.016,rz:(Math.random()-.5)*.01,ph:Math.random()*6.28,
+  c:Math.random()<.78?'34,212,114':'120,200,255'});}
+const parts=[];for(let i=0;i<(W<700?50:110);i++)parts.push({x:Math.random(),y:Math.random(),z:.2+Math.random()*.8,v:.00004+Math.random()*.00008});
+const orbs=[{x:.15,y:.25,r:.38,c:'34,212,114',a:.07,s:.00012},{x:.85,y:.6,r:.42,c:'60,140,255',a:.055,s:.0001},{x:.5,y:.95,r:.35,c:'34,212,114',a:.05,s:.00014}];
+
+function frame(t){
+  smx+=(mx-smx)*.05;smy+=(my-smy)*.05;
+  ctx.clearRect(0,0,W,H);
+  // glow orbs
+  for(const o of orbs){const x=(o.x+Math.sin(t*o.s)*.08-smx*.05)*W,y=(o.y+Math.cos(t*o.s*1.3)*.08-sy*.00004)*H,r=o.r*Math.max(W,H);
+    const gr=ctx.createRadialGradient(x,y,0,x,y,r);gr.addColorStop(0,`rgba(${o.c},${o.a})`);gr.addColorStop(1,`rgba(${o.c},0)`);ctx.fillStyle=gr;ctx.fillRect(0,0,W,H);}
+  // perspective floor grid
+  const hz=H*.72,cx=W/2+smx*-40;
+  ctx.lineWidth=1;
+  const ph=((t*.00012)+sy*.0006)%1;
+  for(let j=0;j<14;j++){const d=(j+ph)/14,yy=hz+(H-hz)*Math.pow(d,2.2);
+    ctx.strokeStyle=`rgba(34,212,114,${.05+d*.26})`;ctx.beginPath();ctx.moveTo(0,yy);ctx.lineTo(W,yy);ctx.stroke();}
+  for(let i=-14;i<=14;i++){const bx=cx+i*W*.09;
+    const gr=ctx.createLinearGradient(0,hz,0,H);gr.addColorStop(0,'rgba(34,212,114,0)');gr.addColorStop(1,'rgba(34,212,114,.26)');
+    ctx.strokeStyle=gr;ctx.beginPath();ctx.moveTo(cx+i*W*.012,hz);ctx.lineTo(bx+(bx-cx)*.9,H);ctx.stroke();}
+  // particles
+  for(const p of parts){p.y-=p.v*16;if(p.y<-.02)p.y=1.02;
+    const x=(p.x+smx*.03*p.z)*W,y=((p.y*H-sy*.15*p.z)%H+H)%H;
+    ctx.fillStyle=`rgba(34,212,114,${.12+p.z*.28})`;ctx.fillRect(x,y,1+p.z*1.4,1+p.z*1.4);}
+  // 3D wireframe shapes
+  const f=H*.9,m=H*.3,Hr=H*1.6;
+  const draw=[];
+  for(const o of objs){
+    o.ax+=o.rx;o.ay+=o.ry;o.az+=o.rz;
+    const par=4/o.z;
+    const cxp=o.nx*W+smx*-120/o.z*3;
+    let cyp=((o.y0-sy*par*.5+Math.sin(t*.0004+o.ph)*18+m)%Hr+Hr)%Hr-m;
+    const sc=o.size*(6/o.z)*1.15;
+    const edge=Math.min(1,Math.max(0,Math.min(cyp+m,Hr-m-cyp)/(m*.9)));
+    const sa=Math.sin(o.ax),ca=Math.cos(o.ax),sb=Math.sin(o.ay),cb=Math.cos(o.ay),sg=Math.sin(o.az),cg=Math.cos(o.az);
+    const pts=o.s.v.map(v=>{let [x,y,z]=v;let y1=y*ca-z*sa,z1=y*sa+z*ca;y=y1;z=z1;
+      let x2=x*cb+z*sb,z2=-x*sb+z*cb;x=x2;z=z2;let x3=x*cg-y*sg,y3=x*sg+y*cg;x=x3;y=y3;
+      const k=1/(1-z*.12);return[cxp+x*sc*k,cyp+y*sc*k,z];});
+    const a=(.20+(1-(o.z-3)/9)*.50)*edge;
+    ctx.strokeStyle=`rgba(${o.c},${a})`;ctx.lineWidth=1+(1-(o.z-3)/9)*1.1;
+    ctx.beginPath();for(const [i,j] of o.s.e){ctx.moveTo(pts[i][0],pts[i][1]);ctx.lineTo(pts[j][0],pts[j][1]);}ctx.stroke();
+    ctx.fillStyle=`rgba(${o.c},${a*1.6})`;for(const q of pts){ctx.fillRect(q[0]-1.2,q[1]-1.2,2.4,2.4);}
+  }
+  if(!reduce)requestAnimationFrame(frame);
+}
+requestAnimationFrame(frame);
+})();
+</script>
+
+<div class="fab-stack" id="fabs">
+  <button type="button" class="fab fab-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 5l7 7-1.4 1.4L13 8.8V20h-2V8.8l-4.6 4.6L5 12z"/></svg></button>
+  <a class="fab fab-call" href="tel:+916265010709" aria-label="Call Rakesh"><svg viewBox="0 0 24 24"><path d="M6.6 10.8a15.1 15.1 0 006.6 6.6l2.2-2.2a1 1 0 011-.25 11.4 11.4 0 003.6.57 1 1 0 011 1V20a1 1 0 01-1 1A17 17 0 013 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.25.2 2.45.57 3.6a1 1 0 01-.25 1z"/></svg></a>
+  <a class="fab fab-wa" href="https://wa.me/916265010709?text=Hi%20Rakesh%2C%20I%20saw%20your%20portfolio." target="_blank" rel="noopener" aria-label="Chat on WhatsApp"><svg viewBox="0 0 24 24"><path d="M12.04 2a9.9 9.9 0 00-8.5 14.9L2 22l5.25-1.5A9.9 9.9 0 1012.04 2zm5.8 14.1c-.25.7-1.4 1.3-1.95 1.35-.5.05-1.1.07-1.8-.12-.4-.13-.95-.3-1.6-.6-2.8-1.2-4.6-4-4.75-4.2-.13-.2-1.1-1.5-1.1-2.8s.7-2 .95-2.25c.25-.27.55-.33.73-.33h.52c.17 0 .4-.06.62.48.25.57.85 2 .92 2.15.07.15.12.32.02.5-.1.2-.15.32-.3.5l-.45.5c-.15.15-.3.3-.13.6.17.3.78 1.3 1.7 2.1 1.15 1 2.1 1.35 2.4 1.5.3.15.47.12.65-.07.17-.2.75-.87.95-1.17.2-.3.4-.25.67-.15.27.1 1.7.8 2 .95.3.15.5.22.57.35.07.12.07.7-.18 1.4z"/></svg></a>
+</div>
+<script>
+(function(){
+const top=document.getElementById('toTop');
+function chk(){top.classList.toggle('show',scrollY>500)}
+addEventListener('scroll',chk,{passive:true});chk();
+top.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+document.querySelectorAll('[data-vcard]').forEach(b=>b.addEventListener('click',()=>{
+  const v=['BEGIN:VCARD','VERSION:3.0','FN:Rakesh Ben','N:Ben;Rakesh;;;','TITLE:Digital Marketing & Content Creator','TEL;TYPE=CELL:+916265010709','EMAIL:rakeshben97@gmail.com','URL:https://www.instagram.com/rakesh.ben97','ADR;TYPE=WORK:;;;Raipur;Chhattisgarh;;India','END:VCARD'].join('\r\n');
+  const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([v],{type:'text/vcard'}));a.download='Rakesh_Ben.vcf';document.body.appendChild(a);a.click();a.remove();
+}));
+document.querySelectorAll('[data-share]').forEach(b=>b.addEventListener('click',async()=>{
+  const d={title:document.title,text:'Rakesh Ben | Digital Marketing & Content Creator',url:location.href};
+  const s=b.querySelector('span');
+  try{ if(navigator.share){await navigator.share(d);} else {await navigator.clipboard.writeText(d.url);s.textContent='Link copied!';setTimeout(()=>s.textContent='Share page',2000);} }catch(e){}
+}));
+})();
+</script>
+</body>
+</html>
